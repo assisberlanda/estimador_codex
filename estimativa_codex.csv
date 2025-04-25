@@ -1,0 +1,11 @@
+Prompt,quantos arquivos tem
+
+Arquivos analisados:
+/Users/berlanda/Documents/Documentos/projetos/Codex CLI/estimador_codex_v3.py
+/Users/berlanda/Documents/Documentos/projetos/Codex CLI/rodar_interface_local.py
+/Users/berlanda/Documents/Documentos/projetos/Codex CLI/Sem Título.txt
+/Users/berlanda/Documents/Documentos/projetos/Codex CLI/relatorio_codex.html
+/Users/berlanda/Documents/Documentos/projetos/Codex CLI/relatorio.json
+
+Modelo,Tokens Entrada,Tokens Saída (estimado),Custo (USD)
+gpt-4,3152,800,0.0555

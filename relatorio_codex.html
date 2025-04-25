@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Estimativa Codex</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f7f7f7; color: #333; }
+        h1 { color: #444; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background: #eee; }
+        pre { background: #f0f0f0; padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Relatório de Estimativa Codex</h1>
+    <h2>📝 Instrução:</h2>
+    <pre id="prompt"></pre>
+
+    <h2>📁 Arquivos Analisados:</h2>
+    <ul id="arquivos"></ul>
+
+    <h2>📊 Estimativas:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Tokens Entrada</th>
+                <th>Tokens Saída</th>
+                <th>Custo (USD)</th>
+            </tr>
+        </thead>
+        <tbody id="tabela">
+        </tbody>
+    </table>
+
+    <script>
+        async function carregarRelatorio() {
+            const resposta = await fetch("relatorio.json");
+            const dados = await resposta.json();
+
+            document.getElementById("prompt").innerText = dados.prompt;
+
+            const lista = document.getElementById("arquivos");
+            dados.arquivos.forEach(arq => {
+                const li = document.createElement("li");
+                li.textContent = arq;
+                lista.appendChild(li);
+            });
+
+            const tabela = document.getElementById("tabela");
+            dados.resultados.forEach(r => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${r.modelo}</td><td>${r.tokens_entrada}</td><td>${r.tokens_saida}</td><td>$${r.custo}</td>`;
+                tabela.appendChild(tr);
+            });
+        }
+
+        carregarRelatorio();
+    </script>
+</body>
+</html>
