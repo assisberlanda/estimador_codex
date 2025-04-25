@@ -1,4 +1,4 @@
-Prompt,quantos arquivos tem
+Prompt,melhore a interface
 
 Arquivos analisados:
 /Users/berlanda/Documents/Documentos/projetos/Codex CLI/estimador_codex_v3.py
@@ -8,4 +8,4 @@ Arquivos analisados:
 /Users/berlanda/Documents/Documentos/projetos/Codex CLI/relatorio.json
 
 Modelo,Tokens Entrada,Tokens Saída (estimado),Custo (USD)
-gpt-4,3152,800,0.0555
+gpt-3.5-turbo,3145,800,0.0028

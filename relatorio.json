@@ -1,5 +1,5 @@
 {
-  "prompt": "quantos arquivos tem",
+  "prompt": "melhore a interface",
   "arquivos": [
     "/Users/berlanda/Documents/Documentos/projetos/Codex CLI/estimador_codex_v3.py",
     "/Users/berlanda/Documents/Documentos/projetos/Codex CLI/rodar_interface_local.py",
@@ -9,10 +9,10 @@
   ],
   "resultados": [
     {
-      "modelo": "gpt-4",
-      "tokens_entrada": 3152,
+      "modelo": "gpt-3.5-turbo",
+      "tokens_entrada": 3145,
       "tokens_saida": 800,
-      "custo": 0.0555
+      "custo": 0.0028
     }
   ]
 }
