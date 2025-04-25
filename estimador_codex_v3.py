@@ -158,10 +158,7 @@ def main():
         input_tokens = contar_tokens(entrada_completa)
 
         resultados = []
-        while True:
-            modelo = inquirer.list_input("🤖 Escolha o modelo:", choices=list(PREÇOS.keys()) + ["❌ Sair"])
-            if "Sair" in modelo:
-                break
+        for modelo in PREÇOS:
             output_tokens_estimado = 800
             custo = estimar_custo(modelo, input_tokens, output_tokens_estimado)
             resultado = {
@@ -184,6 +181,7 @@ def main():
                 iniciar_servidor_local(os.getcwd())
                 if os.path.exists("relatorio.json"):
                     webbrowser.open("http://localhost:8000/relatorio_codex.html")
+                    input("🔁 Pressione Enter para encerrar...")
                 else:
                     print("⚠️ relatorio.json não encontrado. A página pode abrir vazia.")
 
